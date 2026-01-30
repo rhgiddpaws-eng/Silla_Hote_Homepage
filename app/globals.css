@@ -15,6 +15,24 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
+/* ===== Scroll reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-label.hero-label-animate {
+  animation: heroCaptionIn 0.5s ease-out forwards;
+}
+@keyframes heroCaptionIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 /* ===== Popup ===== */
 .popup-layer {
   position: fixed;
@@ -281,22 +299,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
 }
 .now-card-tag { font-size: 0.75rem; color: #888; }
-
-/* ===== Partners ===== */
-.partners { padding: 3rem 1.5rem; background: #f8f8f8; }
-.partners-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-}
-.partner-logo {
-  width: 100px;
-  height: 40px;
-  background: #ddd;
-  border-radius: 4px;
-}
 
 /* ===== Quote ===== */
 .quote-section {
@@ -740,4 +742,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 480px) {
   .section { padding: 2.5rem 1rem; }
   .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.revealed {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-label.hero-label-animate {
+    animation: none;
+  }
 }
