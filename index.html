@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>신라스테이 | Shilla Stay Hotel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 팝업 레이어 (24시간 다시 열람 안 함) -->
+  <div id="popupLayer" class="popup-layer">
+    <div class="popup-inner">
+      <div class="popup-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200'); background-size: cover; background-position: center;"></div>
+      <label class="popup-check">
+        <input type="checkbox" id="popupCheck" /> 24시간 동안 다시 열람하지 않습니다.
+      </label>
+      <button type="button" class="popup-close" aria-label="닫기">닫기</button>
+    </div>
+  </div>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <div class="header-inner">
+      <h1 class="logo">
+        <a href="index.html">신라스테이</a>
+      </h1>
+      <div class="lang">
+        <a href="?lang=ko" class="active">한국어</a>
+        <a href="?lang=en">English</a>
+      </div>
+      <nav class="nav" aria-label="주 메뉴">
+        <ul class="nav-list">
+          <li><a href="rooms.html">Room Reservation</a></li>
+          <li><a href="special-offer.html">Special Offer</a></li>
+          <li class="has-drop">
+            <a href="rooms.html">Rooms</a>
+            <ul class="drop">
+              <li><a href="room-deluxe.html">Deluxe</a></li>
+              <li><a href="room-deluxe-residence.html">Deluxe Residence</a></li>
+              <li><a href="room-suite.html">Suite</a></li>
+            </ul>
+          </li>
+          <li class="has-drop">
+            <a href="dining.html">F&B</a>
+            <ul class="drop">
+              <li><a href="sizzling-house.html">Sizzling House</a></li>
+              <li><a href="via-latte.html">Via Latte</a></li>
+              <li><a href="lounge-licht21.html">The Lounge Licht 21</a></li>
+              <li><a href="beijing.html">Beijing</a></li>
+              <li><a href="mamachae.html">MamaChae</a></li>
+            </ul>
+          </li>
+          <li class="has-drop">
+            <a href="urban-oasis.html">Urban Oasis</a>
+            <ul class="drop">
+              <li><a href="lagoon-pool.html">Lagoon Pool</a></li>
+              <li><a href="fitness.html">Fitness</a></li>
+              <li><a href="lagoon-lounge.html">Lagoon Lounge</a></li>
+              <li><a href="sauna.html">Sauna</a></li>
+            </ul>
+          </li>
+          <li class="has-drop">
+            <a href="convention-wedding.html">Convention & Wedding</a>
+            <ul class="drop">
+              <li><a href="convention.html">Convention</a></li>
+              <li><a href="wedding.html">Wedding</a></li>
+            </ul>
+          </li>
+          <li class="has-drop">
+            <a href="faq.html">Customer Service</a>
+            <ul class="drop">
+              <li><a href="convenience-services.html">Convenience Services</a></li>
+              <li><a href="floor-guide.html">Floor Guide</a></li>
+              <li><a href="directions.html">Directions</a></li>
+              <li><a href="notice.html">Notice</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="online-consultation.html">Online Consultation</a></li>
+            </ul>
+          </li>
+          <li><a href="enford-hotel.html">#ENFORD HOTEL</a></li>
+          <li><a href="membership.html">#MEMBERSHIP</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn-text">Login</a>
+        <a href="register.html" class="btn-text">Register</a>
+      </div>
+      <button type="button" class="menu-toggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <main>
+    <!-- 히어로: 룸 타입 비주얼 -->
+    <section class="hero">
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-bg" style="--bg: url('https://images.unsplash.com/photo-1582719478250-c89c6d9cba22?w=1920')"></div>
+        <div class="hero-caption">
+          <span class="hero-label">SUITE</span>
+        </div>
+      </div>
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-bg" style="--bg: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1920')"></div>
+        <div class="hero-caption">
+          <span class="hero-label">PREMIER</span>
+        </div>
+      </div>
+      <div class="hero-slide" data-slide="2">
+        <div class="hero-bg" style="--bg: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1920')"></div>
+        <div class="hero-caption">
+          <span class="hero-label">BOUTIQUE</span>
+        </div>
+      </div>
+      <div class="hero-slide" data-slide="3">
+        <div class="hero-bg" style="--bg: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=1920')"></div>
+        <div class="hero-caption">
+          <span class="hero-label">DELUXE</span>
+        </div>
+      </div>
+      <div class="hero-dots">
+        <button type="button" data-index="0" class="active" aria-label="슬라이드 1">SUITE</button>
+        <button type="button" data-index="1" aria-label="슬라이드 2">PREMIER</button>
+        <button type="button" data-index="2" aria-label="슬라이드 3">BOUTIQUE</button>
+        <button type="button" data-index="3" aria-label="슬라이드 4">DELUXE</button>
+      </div>
+    </section>
+
+    <!-- NOW! What's happening at Shilla Stay? -->
+    <section class="section now-section" id="now">
+      <h2 class="section-title">NOW! What's happening at Shilla Stay?</h2>
+      <div class="filter-tabs">
+        <button type="button" class="filter-btn active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="fb">F&B</button>
+        <button type="button" class="filter-btn" data-filter="lounge">Bar&Lounge</button>
+        <button type="button" class="filter-btn" data-filter="soleado">솔레아도</button>
+        <button type="button" class="filter-btn" data-filter="urban">Urban Oasis</button>
+      </div>
+      <div class="now-grid">
+        <article class="now-card" data-cat="fb">
+          <a href="sizzling-house.html" class="now-card-link">
+            <div class="now-card-img" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=400')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">F&B</span>
+              <p class="now-card-desc">A steak carefully crafted, starting from the choice of plate. Create unforgettable moments at the steakhouse— a special place to share with family, friends, and loved ones.</p>
+              <span class="now-card-tag">Steakhouse · Reservation Required</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="fb">
+          <a href="via-latte.html" class="now-card-link">
+            <div class="now-card-img img-2" style="background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">F&B</span>
+              <p class="now-card-desc">Just as stars come together to form the Milky Way, this is a place where flavors and encounters beautifully converge. Welcome to Via Latte Buffet.</p>
+              <span class="now-card-tag">Via Latte Buffet</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="lounge">
+          <a href="lounge-licht21.html" class="now-card-link">
+            <div class="now-card-img img-3" style="background-image: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">Bar&Lounge</span>
+              <p class="now-card-desc">A Private Urban Escape – The Lounge Licht21. Seoul's premier hotel lounge bar, where classic ambiance, soft lighting, and refined details come together in perfect harmony.</p>
+              <span class="now-card-tag">The Lounge Licht 21</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="fb">
+          <a href="beijing.html" class="now-card-link">
+            <div class="now-card-img img-4" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">F&B</span>
+              <p class="now-card-desc">Beijing – The rich flavors of authentic Beijing cuisine and premium Chinese spirits, all in one exquisite dining experience.</p>
+              <span class="now-card-tag">Beijing · Authentic Beijing Cuisine</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="fb">
+          <a href="mamachae.html" class="now-card-link">
+            <div class="now-card-img img-5" style="background-image: url('https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">F&B</span>
+              <p class="now-card-desc">Mamachae – A heartfelt meal that nourishes both body and soul. Crafted with seasonal ingredients from across Korea.</p>
+              <span class="now-card-tag">Korean Dining · Reservation Required</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="soleado">
+          <a href="soleado.html" class="now-card-link">
+            <div class="now-card-img img-6" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">솔레아도</span>
+              <p class="now-card-desc">Endless relaxation under the sun — Soleado. Experience a perfect day at our infinity pool where clear skies meet the shimmering water.</p>
+              <span class="now-card-tag">Soleado · Infinity Pool</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="urban">
+          <a href="sauna.html" class="now-card-link">
+            <div class="now-card-img img-7" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">Urban Oasis</span>
+              <p class="now-card-desc">Urban Oasis: Heal Your Body & Mind. Relax deeply and restore your energy in a hinoki-scented sauna designed for true wellness.</p>
+              <span class="now-card-tag">Sauna · Healing</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="urban">
+          <a href="lagoon-lounge.html" class="now-card-link">
+            <div class="now-card-img img-8" style="background-image: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">Urban Oasis</span>
+              <p class="now-card-desc">Lagoon Lounge: Unwind by the Water. Enjoy peaceful moments with snacks and drinks after your swim at the serene Lagoon Lounge.</p>
+              <span class="now-card-tag">Lagoon Lounge</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="urban">
+          <a href="fitness.html" class="now-card-link">
+            <div class="now-card-img img-9" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">Urban Oasis</span>
+              <p class="now-card-desc">The perfect refresh — right in the heart of the city. Start your day strong at Urban Oasis Fitness.</p>
+              <span class="now-card-tag">Urban Oasis Fitness</span>
+            </div>
+          </a>
+        </article>
+        <article class="now-card" data-cat="urban">
+          <a href="lagoon-pool.html" class="now-card-link">
+            <div class="now-card-img img-10" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800')"></div>
+            <div class="now-card-body">
+              <span class="now-card-cat">Urban Oasis</span>
+              <p class="now-card-desc">Stay Sunny, Stay Refreshed! A moment just for you — in the heart of the open city. Lagoon Pool.</p>
+              <span class="now-card-tag">Lagoon Pool · Spa</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Partner Brands -->
+    <section class="section partners">
+      <h2 class="sr-only">Our Partner Brands</h2>
+      <div class="partners-inner">
+        <div class="partner-logo"></div>
+        <div class="partner-logo"></div>
+        <div class="partner-logo"></div>
+        <div class="partner-logo"></div>
+        <div class="partner-logo"></div>
+        <div class="partner-logo"></div>
+        <div class="partner-logo"></div>
+      </div>
+    </section>
+
+    <!-- Urban Oasis 인용 -->
+    <section class="section quote-section">
+      <p class="quote-line">For those who need a complete rest from their busy daily lives,</p>
+      <p class="quote-line">we invite you to an urban oasis</p>
+      <p class="quote-line">where special moments of relaxation flow.</p>
+      <h2 class="quote-title">URBAN OASIS : Unexpected Delight</h2>
+      <div class="quote-body">
+        <p>Shilla Stay is an 'Urban Oasis', a downtown retreat where you can enjoy special relaxation exclusively for yourself. We provide premium relaxation of a higher dimension that delivers endless healing and satisfaction beyond expectations, away from your busy daily life. We will exist for a valuable life and time that will awaken our customers' senses, and guide you on a journey to create a new lifestyle with true rest and enjoyment.</p>
+      </div>
+      <a href="https://www.instagram.com/shillastay/" class="quote-cta" target="_blank" rel="noopener">More in ours Instagram</a>
+    </section>
+
+    <!-- 블록 3열: Membership, Untact, Customer Service -->
+    <section class="section blocks-section">
+      <div class="blocks-inner">
+        <article class="block-card">
+          <h2 class="block-label">SHILLA STAY<br />MEMBERSHIP</h2>
+          <h3 class="block-title">Shilla Stay Hotel Membership</h3>
+          <p class="block-desc">Join Shilla Stay Hotel's membership and discover various benefits. Enjoy VIP benefits including room stays and Urban Oasis access.</p>
+          <div class="block-links">
+            <a href="membership.html">Shilla Stay Membership</a>
+            <a href="urban-oasis-membership.html">Urban Oasis Membership</a>
+          </div>
+        </article>
+        <article class="block-card">
+          <h2 class="block-label">UNTACT<br />PLATFORM</h2>
+          <h3 class="block-title">Untact Platform</h3>
+          <p class="block-desc">After check-in, receive personalized services with just a few touches without physical contact, making every moment of your stay convenient.</p>
+          <a href="untact.html" class="block-cta">Untact Platform Introduction</a>
+        </article>
+        <article class="block-card">
+          <h2 class="block-label">CUSTOMER<br />SERVICE</h2>
+          <h3 class="block-title">Customer Service</h3>
+          <p class="block-desc">Do you have questions about Shilla Stay Hotel? Click on the items below to quickly find the information you need.</p>
+          <div class="block-links">
+            <a href="floor-guide.html">Floor Guide</a>
+            <a href="online-consultation.html">Online Consultation</a>
+            <a href="faq.html">FAQ</a>
+            <a href="convenience-services.html">Convenience Services</a>
+            <a href="directions.html">Directions</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Instagram -->
+    <section class="section instagram-section">
+      <h2 class="section-title">Discover Moments @shillastay</h2>
+      <div class="instagram-grid">
+        <a href="https://www.instagram.com/shillastay/" class="insta-cell" target="_blank" rel="noopener" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400')"><span class="sr-only">1</span></a>
+        <a href="https://www.instagram.com/shillastay/" class="insta-cell" target="_blank" rel="noopener" style="background-image: url('https://images.unsplash.com/photo-1591088398332-8a7791972843?w=400')"><span class="sr-only">2</span></a>
+        <a href="https://www.instagram.com/shillastay/" class="insta-cell" target="_blank" rel="noopener" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=400')"><span class="sr-only">3</span></a>
+        <a href="https://www.instagram.com/shillastay/" class="insta-cell" target="_blank" rel="noopener" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800')"><span class="sr-only">4</span></a>
+        <a href="https://www.instagram.com/shillastay/" class="insta-cell" target="_blank" rel="noopener" style="background-image: url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=800')"><span class="sr-only">5</span></a>
+        <a href="https://www.instagram.com/shillastay/" class="insta-cell" target="_blank" rel="noopener" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400')"><span class="sr-only">6</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">신라스테이</div>
+      <div class="footer-links">
+        <a href="index.html">Shilla Stay Hotel</a>
+        <a href="floor-guide.html">Floor Guide</a>
+        <a href="membership.html">Membership</a>
+        <a href="faq.html">FAQ</a>
+        <a href="online-consultation.html">Online Consultation</a>
+        <a href="notice.html">Notice</a>
+      </div>
+      <div class="footer-legal">
+        <a href="terms.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="privacy.html#email">Email Collection Policy</a>
+        <a href="legal-notice.html">Legal Notice</a>
+        <a href="privacy.html#video">Video Information Processing Policy</a>
+      </div>
+      <p class="footer-info">Business Registration Number: 123-45-67890</p>
+      <address class="footer-address">
+        249, Dongho-ro, Jung-gu, Seoul, Republic of Korea<br />
+        Tel: +82-2-2230-0700 · Fax: +82-2-2230-0800
+      </address>
+      <p class="footer-copy">COPYRIGHT SHILLA STAY HOTEL. ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

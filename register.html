@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | 엔포드호텔</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div id="header-wrap"></div>
+  <main class="main-content page-sub">
+    <section class="sub-hero">
+      <div class="sub-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920')"></div>
+      <h1 class="sub-hero-title">Register</h1>
+    </section>
+    <section class="section">
+      <div class="login-wrap page-content">
+        <p class="section-lead">엔포드호텔 멤버십에 가입하세요.</p>
+
+        <!-- Google로 가입 -->
+        <div class="login-google">
+          <p class="login-label">Google로 가입</p>
+          <div id="googleBtnReg"></div>
+        </div>
+
+        <div class="login-divider"><span>또는</span></div>
+
+        <!-- 이메일 회원가입 폼 (데모용) -->
+        <form class="login-form" id="registerForm">
+          <div class="form-group">
+            <label for="regName">이름</label>
+            <input type="text" id="regName" name="name" required placeholder="이름" />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">이메일</label>
+            <input type="email" id="regEmail" name="email" required placeholder="example@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">비밀번호</label>
+            <input type="password" id="regPassword" name="password" required placeholder="비밀번호 (6자 이상)" minlength="6" />
+          </div>
+          <button type="submit" class="btn-primary btn-block">회원가입</button>
+        </form>
+
+        <p class="login-footer">
+          이미 계정이 있으신가요? <a href="login.html">로그인</a>
+        </p>
+      </div>
+    </section>
+  </main>
+  <div id="footer-wrap"></div>
+  <script src="load-layout.js"></script>
+  <script>
+    (function () {
+      function handleCredentialResponse(response) {
+        var credential = response.credential;
+        if (!credential) return;
+        try {
+          var payload = JSON.parse(atob(credential.split('.')[1]));
+          var user = { email: payload.email || '', name: payload.name || payload.email, picture: payload.picture || '' };
+          sessionStorage.setItem('shillastay_user', JSON.stringify(user));
+          window.location.href = 'index.html';
+        } catch (e) { console.error(e); }
+      }
+      var GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
+      if (window.google && window.google.accounts) {
+        google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: handleCredentialResponse, auto_select: false });
+        google.accounts.id.renderButton(document.getElementById('googleBtnReg'), {
+          type: 'standard', theme: 'outline', size: 'large', text: 'signup_with', shape: 'rectangular', logo_alignment: 'left', width: 280
+        });
+      } else {
+        document.getElementById('googleBtnReg').innerHTML = '<p class="login-note">Google 가입을 사용하려면 GOOGLE_CLIENT_ID를 설정해 주세요.</p>';
+      }
+      document.getElementById('registerForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var user = { email: document.getElementById('regEmail').value, name: document.getElementById('regName').value };
+        sessionStorage.setItem('shillastay_user', JSON.stringify(user));
+        alert('가입이 완료되었습니다.');
+        window.location.href = 'index.html';
+      });
+    })();
+  </script>
+</body>
+</html>

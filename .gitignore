@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment / 비밀 (절대 커밋 금지)
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Git 토큰·비밀을 적어둔 파일이 있다면 아래에 추가 (예: .env.git)
+# *.key
+# credentials*.json
+
+# Logs / OS
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build / Test
+screenshots/
+check-results.json
+StartEndScript/server.log
+
+# Optional (로컬만 사용)
+*.local

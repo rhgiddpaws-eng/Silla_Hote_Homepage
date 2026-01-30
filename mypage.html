@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Page | 엔포드호텔</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="header-wrap"></div>
+  <main class="main-content page-sub">
+    <section class="sub-hero">
+      <div class="sub-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920')"></div>
+      <h1 class="sub-hero-title">My Page</h1>
+    </section>
+    <section class="section">
+      <div class="page-content" id="mypageContent">
+        <p class="section-lead">로그인된 회원 정보가 표시됩니다.</p>
+        <div id="mypageUser"></div>
+        <button type="button" class="btn-primary" id="mypageLogout">로그아웃</button>
+      </div>
+    </section>
+  </main>
+  <div id="footer-wrap"></div>
+  <script src="load-layout.js"></script>
+  <script>
+    (function () {
+      var user = null;
+      try { user = JSON.parse(sessionStorage.getItem('shillastay_user') || 'null'); } catch (e) {}
+      var wrap = document.getElementById('mypageUser');
+      var logoutBtn = document.getElementById('mypageLogout');
+      if (user && user.email) {
+        if (wrap) wrap.innerHTML = '<p><strong>' + (user.name || user.email) + '</strong><br />' + user.email + '</p>';
+        if (logoutBtn) logoutBtn.addEventListener('click', function () {
+          sessionStorage.removeItem('shillastay_user');
+          window.location.href = 'index.html';
+        });
+      } else {
+        if (wrap) wrap.innerHTML = '<p>로그인되어 있지 않습니다.</p>';
+        if (logoutBtn) logoutBtn.textContent = '로그인하기';
+        logoutBtn && logoutBtn.addEventListener('click', function () { window.location.href = 'login.html'; });
+      }
+    })();
+  </script>
+</body>
+</html>
