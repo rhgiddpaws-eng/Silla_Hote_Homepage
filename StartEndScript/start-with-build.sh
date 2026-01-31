@@ -60,4 +60,7 @@ if ! "$NODE_CMD" "$NEXT_BIN_RUN" build; then
   exit 1
 fi
 echo "빌드 완료. 서버를 띄웁니다."
+echo ""
+echo "  접속 주소: http://localhost:3000"
+echo ""
 exec sh "$SCRIPT_DIR/start.sh"

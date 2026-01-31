@@ -179,6 +179,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   inset: 0;
   background: #1a1a1a var(--bg) center/cover no-repeat;
 }
+.hero-bg.hero-bg-inline {
+  /* 인라인 background-image 사용, 실패 시 배경색 */
+  background-color: #1a1a1a;
+  background-repeat: no-repeat;
+}
 .hero-bg::after {
   content: '';
   position: absolute;

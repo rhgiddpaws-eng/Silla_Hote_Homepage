@@ -161,7 +161,7 @@ npm run start
 - **1.2** `npm install` 완료
 - **2A.1** `npx playwright install chromium` 완료
 - **2B** Google OAuth: [GOOGLE-OAUTH-CHECKLIST.md](GOOGLE-OAUTH-CHECKLIST.md)에서 수동 진행
-- **3단계** 로컬에서 순서대로: `npm run build` → `out/` 확인 → `npm run start` (또는 `npm run dev`) → `BASE_URL=http://localhost:3000 npm run verify:screenshots`
+- **3단계** 로컬에서 순서대로: `npm run build` (자동으로 `prebuild`가 히어로 이미지 4장을 `public/images/`에 다운로드) → `out/` 확인 → `npm run start` (또는 `npm run dev`) → `BASE_URL=http://localhost:3000 npm run verify:screenshots`
 - **4단계** [CLOUDFLARE-PAGES-CHECKLIST.md](CLOUDFLARE-PAGES-CHECKLIST.md) 참고
 - **5단계** [VERIFY-E2E-CHECKLIST.md](VERIFY-E2E-CHECKLIST.md) 참고 (자동·수동 병렬 가능)
 
@@ -173,3 +173,6 @@ npm run start
 - Google Client ID: `.env.example` 참고 후 `.env.local`에 `NEXT_PUBLIC_GOOGLE_CLIENT_ID` 설정
 - 스크린샷 저장 위치: `screenshots/*.png`
 - 검증 결과 파일: `check-results.json`
+
+## CloudFlare Pages 에 배포된 페이지
+https://silla-hote-homepage.pages.dev/

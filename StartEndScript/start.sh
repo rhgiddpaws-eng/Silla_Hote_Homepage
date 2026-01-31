@@ -95,5 +95,9 @@ case "$NODE_CMD" in
 esac
 nohup "$NODE_CMD" "$SERVE_JS_RUN" "$OUT_ARG" -l "$PORT" >> "$LOG_FILE" 2>&1 &
 SERVER_PID=$!
-echo "서버가 시작되었습니다. http://localhost:$PORT (PID: $SERVER_PID)"
-echo "종료하려면: sh StartEndScript/end.sh  (Ctrl+Z 누르지 마세요, 프로세스가 멈춥니다)"
+echo ""
+echo "서버가 시작되었습니다."
+echo "  접속 주소: http://localhost:$PORT"
+echo "  PID: $SERVER_PID"
+echo "  종료: sh StartEndScript/end.sh  (Ctrl+Z 누르지 마세요)"
+echo ""

@@ -6,6 +6,7 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/download-hero-images.js",
     "build": "next build",
     "start": "npx serve out",
     "serve-static": "npx serve out",
